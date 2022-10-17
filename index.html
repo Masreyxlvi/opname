@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap demo</title>
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- bootstrap icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+  </head>
+  <body>
+    <div class="container-fluid shadow">
+      <div class="row">
+        <div class="card">
+          <div class="card-title text-center mt-3">
+            <h2>Data Opname</h2>
+            <p>Line 5</p>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <!-- Button trigger modal -->
+              <button type="button" class="btn btn-primary mb-2" data-bs-toggle="modal" data-bs-target="#preform">
+                Prefrom
+              </button>
+              <!-- Button trigger modal -->
+              <button type="button" class="btn btn-primary mb-2" data-bs-toggle="modal" data-bs-target="#cap">
+                Cap
+              </button>
+              <!-- Button trigger modal -->
+              <button type="button" class="btn btn-primary mb-2" data-bs-toggle="modal" data-bs-target="#labelReg">
+                label Reg
+              </button>
+
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Nama Material</th>
+                    <th scope="col">Qty</th>
+                    <th scope="col">Satuan</th>
+                    <th scope="col">action</th>
+                  </tr>
+                </thead>
+                <tbody class="table-group-divider">
+                  <tr>
+                    <th scope="row">Preform</th>
+                    <td id="totalPreform">0</td>
+                    <td>pcs</td>
+                    <td>@mdo</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Cap</th>
+                    <td id="totalCap">0</td>
+                    <td>pcs</td>
+                    <td>@fat</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Label Reg</th>
+                    <td id="totalLabelReg">0</td>
+                    <td>Roll</td>
+                    <td>@fat</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Label Exp</th>
+                    <td id="totalPreform">0</td>
+                    <td>Roll</td>
+                    <td>@fat</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Lem AMDK</th>
+                    <td id="totalPreform">0</td>
+                    <td>Kg</td>
+                    <td>@fat</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Capseal</th>
+                    <td id="totalPreform">0</td>
+                    <td>Roll</td>
+                    <td>@fat</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Karton </th>
+                    <td id="totalPreform">0</td>
+                    <td>Lembar</td>
+                    <td>@fat</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Packing Tape</th>
+                    <td id="totalPreform">0</td>
+                    <td>Roll</td>
+                    <td>@fat</td>
+                  </tr>
+                  
+                </tbody>
+              </table>
+
+                <!-- Modal Prefrom -->
+                  <div class="modal fade" id="preform" tabindex="-1" aria-labelledby="preformLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="preformLabel">Modal Prefrom</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            <form class="row g-3 needs-validation" novalidate>
+                              <div class="col-md-12">
+                                <button type="button" class="btn btn-primary" id="tambah" >add from keranjang</button>
+                              </div>
+                              <div class="col-md-6">
+                                <div id="awalKeranjang">
+                                  <div class="input-group has-validation">
+                                    <span class="input-group-text" id="inputGroupPrepend"><i class="bi bi-cart"></i></span>
+                                    <input type="number" class="form-control text-right keranjang" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
+                                    <div class="invalid-feedback">  
+                                      Please choose a username.
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-md-6">  
+                                <div id="keranjang">
+                                  
+                                </div>
+                            </div>
+                            <!-- pcs -->
+                              <div class="col-md-6">
+                                <div id="awalPcs">
+                                  <div class="input-group has-validation">
+                                    <span class="input-group-text" id="inputGroupPrepend">Pcs</span>
+                                    <input type="number" class="form-control text-right pcs" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
+                                    <div class="invalid-feedback">  
+                                      Please choose a username.
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            
+                              <div class="col-md-6">  
+                                <div id="pcs">
+                                  
+                                </div>
+                              </div>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" id="check" data-bs-dismiss="modal" class="btn btn-danger">check</button>
+                              <!-- <button type="submit" class="btn btn-primary">Save</button> -->
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                  </div>
+            
+                <!-- Modal cap -->
+                  <div class="modal fade" id="cap" tabindex="-1" aria-labelledby="capLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="capLabel">Modal cap</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            <form class="row g-3 needs-validation" novalidate>
+                              <div class="col-md-12">
+                                <button type="button" class="btn btn-primary" id="tambahCap" >add form</button>
+                              </div>
+                              <div class="col-md-6">
+                                <div id="awalPalletCap">
+                                  <div class="input-group has-validation">
+                                    <span class="input-group-text" id="inputGroupPrepend"><i class="bi bi-cart"></i></span>
+                                    <input type="number" class="form-control text-right palletCap" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
+                                    <div class="invalid-feedback">  
+                                      Please choose a username.
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-md-6">  
+                                <div id="palletCap">
+                                  
+                                </div>
+                            </div>
+                           <!-- box -->
+                              <div class="col-md-6">
+                                <div id="awalbox">
+                                  <div class="input-group has-validation">
+                                    <span class="input-group-text" id="inputGroupPrepend">box</span>
+                                    <input type="number" class="form-control text-right box" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
+                                    <div class="invalid-feedback">  
+                                      Please choose a username.
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            
+                              <div class="col-md-6">  
+                                <div id="boxCap">
+                                  
+                                </div>
+                              </div>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" id="saveCap" data-bs-dismiss="modal" class="btn btn-danger">check</button>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                  </div>
+
+                <!-- Modal labelReg -->
+                  <div class="modal fade" id="labelReg" tabindex="-1" aria-labelledby="labelRegLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="labelRegLabel">Modal label Reg</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            <form class="row g-3 needs-validation" novalidate>
+                              <div class="col-md-12">
+                                <button type="button" class="btn btn-primary" id="tambahlabelReg" >add form</button>
+                              </div>
+                              <div class="col-md-6">
+                                <div id="awallabelReg">
+                                  <div class="input-group has-validation">
+                                    <span class="input-group-text" id="inputGroupPrepend"><i class="bi bi-cart"></i></span>
+                                    <input type="number" class="form-control text-right boxLabel" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
+                                    <div class="invalid-feedback">  
+                                      Please choose a username.
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-md-6">  
+                                <div id="akhirlabelReg">
+                                  
+                                </div>
+                            </div>
+                           <!-- box -->
+                              <div class="col-md-6">
+                                <div id="awallabel">
+                                  <div class="input-group has-validation">
+                                    <span class="input-group-text" id="inputGroupPrepend">box</span>
+                                    <input type="number" class="form-control text-right rollLabel" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
+                                    <div class="invalid-feedback">  
+                                      Please choose a username.
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            
+                              <div class="col-md-6">  
+                                <div id="labelReg">
+                                  
+                                </div>
+                              </div>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" id="savelabelReg" data-bs-dismiss="modal" class="btn btn-danger">check</button>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                  </div>
+            
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <script src="js/pengecekan.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/preform.js"></script>
+    <script src="js/cap.js"></script>
+    <script src="js/labelReg.js"></script>
+    
+    <script>
+      $(function(){
+        $('#tambah').on('click', function(){
+          tambahKrj(this)
+          tambahPcs(this)
+        })
+        $('#tambahCap').on('click', function(){
+          fromPallet(this)
+          tambahbox(this)
+        })
+      })
+        function tambahKrj() {
+          // alert("test");
+          $("#awalKeranjang").clone().appendTo($("#keranjang"));
+        }
+        function tambahPcs() {
+          // alert("test");
+          $("#awalPcs").clone().appendTo($("#pcs"));
+        }
+        function fromPallet() {
+          // alert("test");
+          $("#awalPalletCap").clone().appendTo($("#palletCap"));
+        }
+        function tambahbox() {
+          // alert("test");
+          $("#awalbox").clone().appendTo($("#boxCap"));
+        }
+
+      
+    </script>
+  </body>
+</html>
