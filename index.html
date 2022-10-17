@@ -19,97 +19,102 @@
           </div>
           <div class="card">
             <div class="card-body">
-              <!-- Preform -->
-              <button type="button" class="btn btn-danger mb-2" data-bs-toggle="modal" data-bs-target="#preform">
-                Prefrom
-              </button>
-              <!-- Cap -->
-              <button type="button" class="btn btn-danger mb-2" data-bs-toggle="modal" data-bs-target="#cap">
-                Cap
-              </button>
+              <div class="row justify-content-center">
 
-              <!-- Label Reg -->
-              <button type="button" class="btn btn-danger mb-2" data-bs-toggle="modal" data-bs-target="#labelReg">
-                label Reg
-              </button>
+                  <!-- Preform -->
+                  <button type="button" class="btn btn-danger mb-2" data-bs-toggle="modal" data-bs-target="#preform">
+                    Prefrom
+                  </button>
+                  <!-- Cap -->
+                  <button type="button" class="btn btn-danger mb-2" data-bs-toggle="modal" data-bs-target="#cap">
+                  Cap
+                </button>
 
-              <!-- Label Exp -->
-              <button type="button" class="btn btn-danger mb-2" data-bs-toggle="modal" data-bs-target="#labelExp">
-                label Exp
-              </button>
-              
-              <!-- Label Exp -->
-              <button type="button" class="btn btn-danger mb-2" data-bs-toggle="modal" data-bs-target="#LemAMDK">
-                Lem AMDK
-              </button>
+                <!-- Label Reg -->
+                <button type="button" class="btn btn-danger mb-2" data-bs-toggle="modal" data-bs-target="#labelReg">
+                  label Reg
+                </button>
 
-              <!-- Label Exp -->
-              <button type="button" class="btn btn-danger mb-2" data-bs-toggle="modal" data-bs-target="#Capseal">
-                Capseal
-              </button>
+                <!-- Label Exp -->
+                <button type="button" class="btn btn-danger mb-2" data-bs-toggle="modal" data-bs-target="#labelExp">
+                  label Exp
+                </button>
+                
+                <!-- Label Exp -->
+                <button type="button" class="btn btn-danger mb-2" data-bs-toggle="modal" data-bs-target="#LemAMDK">
+                  Lem AMDK
+                </button>
+                
+                <!-- Label Exp -->
+                <button type="button" class="btn btn-danger mb-2" data-bs-toggle="modal" data-bs-target="#Capseal">
+                  Capseal
+                </button>
+                
+                <!-- Karton -->
+                <button type="button" class="btn btn-danger mb-2" data-bs-toggle="modal" data-bs-target="#Karton">
+                  Karton
+                </button>
+                
+                <!-- PackingTape -->
+                <button type="button" class="btn btn-danger mb-2" data-bs-toggle="modal" data-bs-target="#PackingTape">
+                  Packing Tape
+                </button>
+                
+    
+              </div>
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">Nama Material</th>
+                      <th scope="col">Qty</th>
+                      <th scope="col">Satuan</th>
+                    </tr>
+                  </thead>
+                  <tbody class="table-group-divider">
+                    <tr>
+                      <th scope="row">Preform</th>
+                      <td id="totalPreform">0</td>
+                      <td>pcs</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Cap</th>
+                      <td id="totalCap">0</td>
+                      <td>pcs</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Label Reg</th>
+                      <td id="totalLabelReg">0</td>
+                      <td>Roll</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Label Exp</th>
+                      <td id="totalLabelExp">0</td>
+                      <td>Roll</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Lem AMDK</th>
+                      <td id="totalLemAMDK">0</td>
+                      <td>Kg</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Capseal</th>
+                      <td id="totalCapseal">0</td>
+                      <td>Roll</td>
+                    </tr>
+                    <tr>
+                      <th scope="row" id="namaKarton">Karton </th>
+                      <td id="totalKarton">0</td>
+                      <td>Lembar</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Packing Tape</th>
+                      <td id="totalPackingTape">0</td>
+                      <td>Roll</td>
+                    </tr>
+                    
+                  </tbody>
+                </table>
 
-              <!-- Karton -->
-              <button type="button" class="btn btn-danger mb-2" data-bs-toggle="modal" data-bs-target="#Karton">
-                Karton
-              </button>
-
-              <!-- PackingTape -->
-              <button type="button" class="btn btn-danger mb-2" data-bs-toggle="modal" data-bs-target="#PackingTape">
-                Packing Tape
-              </button>
-
-              <table class="table">
-                <thead>
-                  <tr>
-                    <th scope="col">Nama Material</th>
-                    <th scope="col">Qty</th>
-                    <th scope="col">Satuan</th>
-                  </tr>
-                </thead>
-                <tbody class="table-group-divider">
-                  <tr>
-                    <th scope="row">Preform</th>
-                    <td id="totalPreform">0</td>
-                    <td>pcs</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Cap</th>
-                    <td id="totalCap">0</td>
-                    <td>pcs</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Label Reg</th>
-                    <td id="totalLabelReg">0</td>
-                    <td>Roll</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Label Exp</th>
-                    <td id="totalLabelExp">0</td>
-                    <td>Roll</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Lem AMDK</th>
-                    <td id="totalLemAMDK">0</td>
-                    <td>Kg</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Capseal</th>
-                    <td id="totalCapseal">0</td>
-                    <td>Roll</td>
-                  </tr>
-                  <tr>
-                    <th scope="row" id="namaKarton">Karton </th>
-                    <td id="totalKarton">0</td>
-                    <td>Lembar</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Packing Tape</th>
-                    <td id="totalPackingTape">0</td>
-                    <td>Roll</td>
-                  </tr>
-                  
-                </tbody>
-              </table>
 
                 <!-- Modal Prefrom -->
                   <div class="modal fade" id="preform" tabindex="-1" aria-labelledby="preformLabel" aria-hidden="true">
