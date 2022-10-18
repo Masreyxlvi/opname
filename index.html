@@ -13,52 +13,58 @@
     <div class="container-fluid shadow">
       <div class="row">
         <div class="card">
-          <div class="card-title text-center text-danger mt-3">
+          <div class="card-title text-center text-danger mt-2">
             <h2>Data Opname</h2>
             <p>Line 5</p>
           </div>
           <div class="card">
             <div class="card-body">
-              <div class="row justify-content-center">
+              <div class="row justify-content-evenly">
 
                   <!-- Preform -->
-                  <button type="button" class="btn btn-danger mb-2" data-bs-toggle="modal" data-bs-target="#preform">
+                  <button type="button" class="btn btn-outline-danger mb-2" data-bs-toggle="modal" data-bs-target="#preform">
                     Prefrom
                   </button>
                   <!-- Cap -->
-                  <button type="button" class="btn btn-danger mb-2" data-bs-toggle="modal" data-bs-target="#cap">
+                  <button type="button" class="btn btn-outline-danger mb-2" data-bs-toggle="modal" data-bs-target="#cap">
                   Cap
                 </button>
 
                 <!-- Label Reg -->
-                <button type="button" class="btn btn-danger mb-2" data-bs-toggle="modal" data-bs-target="#labelReg">
+                <button type="button" class="btn btn-outline-danger mb-2" data-bs-toggle="modal" data-bs-target="#labelReg">
                   label Reg
                 </button>
 
                 <!-- Label Exp -->
-                <button type="button" class="btn btn-danger mb-2" data-bs-toggle="modal" data-bs-target="#labelExp">
+                <button type="button" class="btn btn-outline-danger mb-2" data-bs-toggle="modal" data-bs-target="#labelExp">
                   label Exp
                 </button>
                 
                 <!-- Label Exp -->
-                <button type="button" class="btn btn-danger mb-2" data-bs-toggle="modal" data-bs-target="#LemAMDK">
+                <button type="button" class="btn btn-outline-danger mb-2" data-bs-toggle="modal" data-bs-target="#LemAMDK">
                   Lem AMDK
                 </button>
                 
                 <!-- Label Exp -->
-                <button type="button" class="btn btn-danger mb-2" data-bs-toggle="modal" data-bs-target="#Capseal">
+                <button type="button" class="btn btn-outline-danger mb-2" data-bs-toggle="modal" data-bs-target="#Capseal">
                   Capseal
                 </button>
                 
                 <!-- Karton -->
-                <button type="button" class="btn btn-danger mb-2" data-bs-toggle="modal" data-bs-target="#Karton">
+                <button type="button" class="btn btn-outline-danger mb-2" data-bs-toggle="modal" data-bs-target="#Karton">
                   Karton
                 </button>
-                
+
                 <!-- PackingTape -->
-                <button type="button" class="btn btn-danger mb-2" data-bs-toggle="modal" data-bs-target="#PackingTape">
+                <button type="button" class="btn btn-outline-danger mb-2" data-bs-toggle="modal" data-bs-target="#PackingTape">
                   Packing Tape
                 </button>
+
+                <!-- KartonBl  -->
+                <button type="button" class="btn btn-outline-danger mb-2" data-bs-toggle="modal" data-bs-target="#KartonBl ">
+                  Karton (Bl)
+                </button>
+                
                 
     
               </div>
@@ -111,6 +117,11 @@
                       <td id="totalPackingTape">0</td>
                       <td>Roll</td>
                     </tr>
+                    <tr>
+                      <th scope="row" id="namaKartonBl">Karton (Bl)</th>
+                      <td id="totalKartonBl">0</td>
+                      <td>Lembar</td>
+                    </tr>
                     
                   </tbody>
                 </table>
@@ -132,8 +143,8 @@
                               <div class="col-md-12">
                                 <div id="awalKeranjang">
                                   <div class="input-group has-validation">
+                                    <input type="number" placeholder="0" class="form-control text-right keranjang" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
                                     <span class="input-group-text" id="inputGroupPrepend"><i class="bi bi-cart"></i></span>
-                                    <input type="number" class="form-control text-right keranjang" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
                                     <div class="invalid-feedback">  
                                       Please choose a username.
                                     </div>
@@ -144,11 +155,14 @@
                                 </div>
                             </div>
                             <!-- pcs -->
+                            <div class="col-md-12">
+                              <button type="button" class="btn btn-danger" onclick=tambahPcs() >add from Pcs</button>
+                            </div>
                               <div class="col-md-12">
                                 <div id="awalPcs">
                                   <div class="input-group has-validation">
+                                    <input type="number" placeholder="0" class="form-control text-right pcs" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
                                     <span class="input-group-text" id="inputGroupPrepend">Pcs</span>
-                                    <input type="number" class="form-control text-right pcs" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
                                     <div class="invalid-feedback">  
                                       Please choose a username.
                                     </div>
@@ -183,8 +197,8 @@
                               <div class="col-md-12">
                                 <div id="awalPalletCap">
                                   <div class="input-group has-validation">
+                                    <input type="number" placeholder="0" class="form-control text-right palletCap" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
                                     <span class="input-group-text" id="inputGroupPrepend">Pallet</span>
-                                    <input type="number" class="form-control text-right palletCap" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
                                     <div class="invalid-feedback">  
                                       Please choose a username.
                                     </div>
@@ -195,11 +209,14 @@
                                 </div>
                             </div>
                            <!-- box -->
+                           <div class="col-md-12">
+                            <button type="button" class="btn btn-danger" onclick=tambahBoxCap() >add from</button>
+                          </div>
                               <div class="col-md-12">
                                 <div id="awalbox">
                                   <div class="input-group has-validation">
+                                    <input type="number" placeholder="0" class="form-control text-right box" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
                                     <span class="input-group-text" id="inputGroupPrepend">box</span>
-                                    <input type="number" class="form-control text-right box" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
                                     <div class="invalid-feedback">  
                                       Please choose a username.
                                     </div>
@@ -234,8 +251,8 @@
                               <div class="col-md-12">
                                 <div id="awallabelReg">
                                   <div class="input-group has-validation">
+                                    <input type="number" placeholder="0" class="form-control text-right boxLabel" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
                                     <span class="input-group-text" id="inputGroupPrepend">Box</span>
-                                    <input type="number" class="form-control text-right boxLabel" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
                                     <div class="invalid-feedback">  
                                       Please choose a username.
                                     </div>
@@ -246,11 +263,14 @@
                                 </div>
                             </div>
                            <!-- roll -->
+                           <div class="col-md-12">
+                            <button type="button" class="btn btn-danger" onclick=tambahRollLabelReg() >add form</button>
+                          </div>
                               <div class="col-md-12">
                                 <div id="awalrollLabel">
                                   <div class="input-group has-validation">
+                                    <input type="number" placeholder="0" class="form-control text-right rollLabel" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
                                     <span class="input-group-text" id="inputGroupPrepend">Roll</span>
-                                    <input type="number" class="form-control text-right rollLabel" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
                                     <div class="invalid-feedback">  
                                       Please choose a username.
                                     </div>
@@ -285,8 +305,8 @@
                               <div class="col-md-12">
                                 <div id="awallabelExp">
                                   <div class="input-group has-validation">
+                                    <input type="number" placeholder="0" class="form-control text-right boxLabelExp" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
                                     <span class="input-group-text" id="inputGroupPrepend">Box</span>
-                                    <input type="number" class="form-control text-right boxLabelExp" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
                                     <div class="invalid-feedback">  
                                       Please choose a username.
                                     </div>
@@ -297,11 +317,14 @@
                                 </div>
                             </div>
                            <!-- roll -->
+                           <div class="col-md-12">
+                            <button type="button" class="btn btn-danger" onclick=tambahRollLabelExp() >add form</button>
+                          </div>
                               <div class="col-md-12">
                                 <div id="awalrollLabelExp">
                                   <div class="input-group has-validation">
+                                    <input type="number" placeholder="0" class="form-control text-right rollLabelExp" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
                                     <span class="input-group-text" id="inputGroupPrepend">Roll</span>
-                                    <input type="number" class="form-control text-right rollLabelExp" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
                                     <div class="invalid-feedback">  
                                       Please choose a username.
                                     </div>
@@ -336,8 +359,8 @@
                               <div class="col-md-12">  
                                 <div id="awalLemAMDK">
                                   <div class="input-group has-validation">
+                                    <input type="number" placeholder="0" class="form-control text-right boxLemAMDK" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
                                     <span class="input-group-text" id="inputGroupPrepend">Box</span>
-                                    <input type="number" class="form-control text-right boxLemAMDK" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
                                     <div class="invalid-feedback">  
                                       Please choose a username.
                                     </div>
@@ -348,11 +371,14 @@
                                 </div>
                             </div>
                            <!-- kg -->
+                           <div class="col-md-12">
+                            <button type="button" class="btn btn-danger" onclick=tambahKgLemAMDK() >add form</button>
+                          </div>
                               <div class="col-md-12">
                                 <div id="awalkgLemAMDK">
                                   <div class="input-group has-validation">
+                                    <input type="number" placeholder="0" class="form-control text-right kg" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
                                     <span class="input-group-text" id="inputGroupPrepend">Kg</span>
-                                    <input type="number" class="form-control text-right kg" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
                                     <div class="invalid-feedback">  
                                       Please choose a username.
                                     </div>
@@ -388,8 +414,8 @@
                               <div class="col-md-12">
                                 <div id="awalCapseal">
                                   <div class="input-group has-validation">
+                                    <input type="number" placeholder="0" class="form-control text-right boxCapseal" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
                                     <span class="input-group-text" id="inputGroupPrepend">Box</span>
-                                    <input type="number" class="form-control text-right boxCapseal" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
                                     <div class="invalid-feedback">  
                                       Please choose a username.
                                     </div>
@@ -401,11 +427,14 @@
                               </div>
                              
                            <!-- roll -->
+                           <div class="col-md-12">
+                            <button type="button" class="btn btn-danger" onclick=tambahRollCapseal() >add form</button>
+                            </div>
                               <div class="col-md-12">
                                 <div id="awalrollCapseal">
                                   <div class="input-group has-validation">
+                                    <input type="number" placeholder="0" class="form-control text-right rollCapseal" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
                                     <span class="input-group-text" id="inputGroupPrepend">roll</span>
-                                    <input type="number" class="form-control text-right rollCapseal" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
                                     <div class="invalid-feedback">  
                                       Please choose a username.
                                     </div>
@@ -440,8 +469,8 @@
                               <div class="col-md-12">
                                 <div id="awalPackingTape">
                                   <div class="input-group has-validation">
+                                    <input type="number" placeholder="0" class="form-control text-right boxPackingTape" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
                                     <span class="input-group-text" id="inputGroupPrepend">Box</span>
-                                    <input type="number" class="form-control text-right boxPackingTape" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
                                     <div class="invalid-feedback">  
                                       Please choose a username.
                                     </div>
@@ -453,11 +482,14 @@
                               </div>
                              
                            <!-- roll -->
+                           <div class="col-md-12">
+                            <button type="button" class="btn btn-danger" onclick=tambahRollPackingTape() >add form</button>
+                            </div>
                               <div class="col-md-12">
                                 <div id="awalrollPackingTape">
                                   <div class="input-group has-validation">
+                                    <input type="number" placeholder="0" class="form-control text-right rollPackingTape" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
                                     <span class="input-group-text" id="inputGroupPrepend">roll</span>
-                                    <input type="number" class="form-control text-right rollPackingTape" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
                                     <div class="invalid-feedback">  
                                       Please choose a username.
                                     </div>
@@ -501,8 +533,8 @@
                               <div class="col-md-12">
                                 <div id="awalKarton">
                                   <div class="input-group has-validation">
+                                    <input type="number" placeholder="0" class="form-control text-right palletKarton" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
                                     <span class="input-group-text" id="inputGroupPrepend">Pallet</span>
-                                    <input type="number" class="form-control text-right palletKarton" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
                                     <div class="invalid-feedback">  
                                       Please choose a username.
                                     </div>
@@ -514,11 +546,14 @@
                               </div>
                              
                            <!-- lbr -->
+                           <div class="col-md-12">
+                            <button type="button" class="btn btn-danger" onclick=tambahLbrKarton() >add form</button>
+                            </div>
                               <div class="col-md-12">
                                 <div id="awallbrKarton">
                                   <div class="input-group has-validation">
+                                    <input type="number" placeholder="0" class="form-control text-right lbrKarton" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
                                     <span class="input-group-text" id="inputGroupPrepend">lbr</span>
-                                    <input type="number" class="form-control text-right lbrKarton" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
                                     <div class="invalid-feedback">  
                                       Please choose a username.
                                     </div>
@@ -531,6 +566,70 @@
                             </div>
                             <div class="modal-footer">
                               <button type="button" id="saveKarton" data-bs-dismiss="modal" class="btn btn-danger">check</button>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                  </div>
+
+                <!-- Modal Karton Bl -->
+                  <div class="modal fade" id="KartonBl" tabindex="-1" aria-labelledby="KartonBlLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="KartonBlLabel">Modal Karton (Bl)</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            <form class="row g-3 needs-validation" novalidate>
+                              <div class="col-lg-12">
+                                <select class="form-select namaKartonBl" aria-label="Default select example">
+                                  <option selected disabled>Jensi Karton</option>
+                                  <option value="Promo">Promo</option>
+                                  <option value="Reguler">Reguler</option>
+                                  <option value="Phill">Phill</option>
+                                  <option value="PhillPromo">Phill Promo</option>
+                                </select>
+                              </div>
+                              <div class="col-md-12">
+                                <button type="button" class="btn btn-danger" onclick=tambahKartonBl() >add form</button>
+                              </div>
+                              <div class="col-md-12">
+                                <div id="awalKartonBl">
+                                  <div class="input-group has-validation">
+                                    <input type="number" placeholder="0" class="form-control text-right palletKartonBl" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
+                                    <span class="input-group-text" id="inputGroupPrepend">Pallet</span>
+                                    <div class="invalid-feedback">  
+                                      Please choose a username.
+                                    </div>
+                                  </div>
+                                </div>
+                                <div id="akhirKartonBl">
+                                  
+                                </div>
+                              </div>
+                             
+                           <!-- lbr -->
+                           <div class="col-md-12">
+                            <button type="button" class="btn btn-danger" onclick=tambahLbrKartonBl() >add form</button>
+                           </div>
+                              <div class="col-md-12">
+                                <div id="awallbrKartonBl">
+                                  <div class="input-group has-validation">
+                                    <input type="number" placeholder="0" class="form-control text-right lbrKartonBl" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
+                                    <span class="input-group-text" id="inputGroupPrepend">lbr</span>
+                                    <div class="invalid-feedback">  
+                                      Please choose a username.
+                                    </div>
+                                  </div>
+                                </div> 
+                                <div id="lbrKartonBl">
+                                  
+                                </div>
+                              </div>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" id="saveKartonBl" data-bs-dismiss="modal" class="btn btn-danger">check</button>
                             </div>
                           </div>
                         </form>
@@ -557,6 +656,7 @@
     <script src="js/LemAMDK.js"></script>
     <script src="js/karton.js"></script>
     <script src="js/pt.js"></script>
+    <script src="js/b1.js"></script>
     <script src="js/tambah.js"></script>
   </body>
 </html>

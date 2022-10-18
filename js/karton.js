@@ -17,7 +17,7 @@ $(function () {
       }
     });
     $("#totalKarton").text(sum.toLocaleString("en-US"));
-    $("#namaKarton").text("Karton " + nama);
+    $("#namaKarton").text("Karton " + nama + " (Line)");
   };
 
   $("#saveKarton").on("click", function () {

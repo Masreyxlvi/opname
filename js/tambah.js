@@ -1,38 +1,67 @@
 function tambahKrj() {
-  // alert("test");
   $("#awalKeranjang").clone().appendTo($("#keranjang"));
+}
+function tambahPcs() {
   $("#awalPcs").clone().appendTo($("#pcs"));
 }
 
 function tambahCap() {
-  // alert("test");
   $("#awalPalletCap").clone().appendTo($("#palletCap"));
+}
+
+function tambahBoxCap() {
   $("#awalbox").clone().appendTo($("#boxCap"));
 }
 
 function tambahlabelReg() {
-  // alert("test");
   $("#awallabelReg").clone().appendTo($("#akhirlabelReg"));
+}
+
+function tambahRollLabelReg() {
   $("#awalrollLabel").clone().appendTo($("#rollLabel"));
 }
+
 function tambahlabelExp() {
-  // alert("test");
   $("#awallabelExp").clone().appendTo($("#akhirlabelExp"));
+}
+function tambahRollLabelExp() {
   $("#awalrollLabelExp").clone().appendTo($("#rollLabelExp"));
 }
+
 function tambahLemAMDK() {
   $("#awalLemAMDK").clone().appendTo($("#akhirLemAMDK"));
+}
+
+function tambahKgLemAMDK() {
   $("#awalkgLemAMDK").clone().appendTo($("#kgLemAMDK"));
 }
+
 function tambahCapseal() {
   $("#awalCapseal").clone().appendTo($("#akhirCapseal"));
+}
+
+function tambahRollCapseal() {
   $("#awalrollCapseal").clone().appendTo($("#rollCapseal"));
 }
+
 function tambahKarton() {
   $("#awalKarton").clone().appendTo($("#akhirKarton"));
+}
+
+function tambahLbrKarton() {
   $("#awallbrKarton").clone().appendTo($("#lbrKarton"));
 }
+
 function tambahPackingTape() {
   $("#awalPackingTape").clone().appendTo($("#akhirPackingTape"));
+}
+function tambahRollPackingTape() {
   $("#awalrollPackingTape").clone().appendTo($("#rollPackingTape"));
+}
+
+function tambahKartonBl() {
+  $("#awalKartonBl").clone().appendTo($("#akhirKartonBl"));
+}
+function tambahLbrKartonBl() {
+  $("#awallbrKartonBl").clone().appendTo($("#lbrKartonBl"));
 }
