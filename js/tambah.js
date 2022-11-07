@@ -31,9 +31,16 @@ function tambahRollLabelExp() {
 function tambahLemAMDK() {
   $("#awalLemAMDK").clone().appendTo($("#akhirLemAMDK"));
 }
+function tambahlemAdtek() {
+  $("#awallemAdtek").clone().appendTo($("#akhirlemAdtek"));
+}
 
-function tambahKgLemAMDK() {
-  $("#awalkgLemAMDK").clone().appendTo($("#kgLemAMDK"));
+function tambahKglemAMDK() {
+  $("#awalkglemAMDK").clone().appendTo($("#kglemAMDK"));
+}
+
+function tambahKglemAdtek() {
+  $("#awalkglemAdtek").clone().appendTo($("#kglemAdtek"));
 }
 
 function tambahCapseal() {

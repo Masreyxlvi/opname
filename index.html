@@ -3,660 +3,136 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Masreyxlvi | Opname</title>
-    <!-- bootstrap -->
+    <title>Update Per Jam</title>
+    <!-- link bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <!-- bootstrap icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <!-- link icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css" />
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   </head>
+  <style>
+    :root {
+      --gradient: linear-gradient(319.6deg, rgba(243, 0, 79, 1) 20.5%, rgba(255, 236, 68, 1) 110.9%);
+    }
+
+    body {
+      height: 100vh;
+      background-color: #eaeaea;
+      background-image: var(--gradient);
+      background-size: 200%;
+      animation: gradient 20s infinite alternate;
+      font-family: roboto;
+    }
+
+    .container {
+      height: 80vh;
+      display: flex;
+      align-items: center;
+    }
+
+    @keyframes gradient {
+      0% {
+        background-position: left;
+      }
+
+      100% {
+        background-position: right;
+      }
+    }
+    a {
+      text-decoration: none;
+      color: crimson;
+      font-weight: 600px;
+    }
+    a:hover {
+      font-weight: bold;
+      color: crimson;
+      transition: all 0.3 ease-in-out;
+    }
+
+    @media (min-width: 992px) {
+      body {
+        height: 94vh;
+      }
+      .container {
+        height: 60vh;
+      }
+      .card {
+        padding: 20;
+      }
+    }
+  </style>
   <body>
-    <div class="container-fluid shadow">
-      <div class="row">
-        <div class="card">
-          <div class="card-title text-center text-danger mt-2">
-            <h2>Data Opname</h2>
-            <p>Line 5</p>
-          </div>
+    <div class="container-fluid text-center text-white mt-5">
+      <h1>Opname</h1>
+      <p>PT Tirta Fresindo Jaya Mayora Group</p>
+    </div>
+    <div class="container mb-3">
+      <div class="row justify-content-center text-center">
+        <div class="col-lg-4 mb-3 shadow-sm">
           <div class="card">
             <div class="card-body">
-              <div class="row justify-content-evenly">
-
-                  <!-- Preform -->
-                  <button type="button" class="btn btn-outline-danger mb-2" data-bs-toggle="modal" data-bs-target="#preform">
-                    Prefrom
-                  </button>
-                  <!-- Cap -->
-                  <button type="button" class="btn btn-outline-danger mb-2" data-bs-toggle="modal" data-bs-target="#cap">
-                  Cap
-                </button>
-
-                <!-- Label Reg -->
-                <button type="button" class="btn btn-outline-danger mb-2" data-bs-toggle="modal" data-bs-target="#labelReg">
-                  label Reg
-                </button>
-
-                <!-- Label Exp -->
-                <button type="button" class="btn btn-outline-danger mb-2" data-bs-toggle="modal" data-bs-target="#labelExp">
-                  label Exp
-                </button>
-                
-                <!-- Label Exp -->
-                <button type="button" class="btn btn-outline-danger mb-2" data-bs-toggle="modal" data-bs-target="#LemAMDK">
-                  Lem AMDK
-                </button>
-                
-                <!-- Label Exp -->
-                <button type="button" class="btn btn-outline-danger mb-2" data-bs-toggle="modal" data-bs-target="#Capseal">
-                  Capseal
-                </button>
-                
-                <!-- Karton -->
-                <button type="button" class="btn btn-outline-danger mb-2" data-bs-toggle="modal" data-bs-target="#Karton">
-                  Karton
-                </button>
-
-                <!-- PackingTape -->
-                <button type="button" class="btn btn-outline-danger mb-2" data-bs-toggle="modal" data-bs-target="#PackingTape">
-                  Packing Tape
-                </button>
-
-                <!-- KartonBl  -->
-                <button type="button" class="btn btn-outline-danger mb-2" data-bs-toggle="modal" data-bs-target="#KartonBl ">
-                  Karton (Bl)
-                </button>
-                
-                
-    
-              </div>
-                <table class="table">
-                  <thead>
-                    <tr>
-                      <th scope="col">Nama Material</th>
-                      <th scope="col">Qty</th>
-                      <th scope="col">Satuan</th>
-                    </tr>
-                  </thead>
-                  <tbody class="table-group-divider">
-                    <tr>
-                      <th scope="row">Preform</th>
-                      <td id="totalPreform">0</td>
-                      <td>pcs</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">Cap</th>
-                      <td id="totalCap">0</td>
-                      <td>pcs</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">Label Reg</th>
-                      <td id="totalLabelReg">0</td>
-                      <td>Roll</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">Label Exp</th>
-                      <td id="totalLabelExp">0</td>
-                      <td>Roll</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">Lem AMDK</th>
-                      <td id="totalLemAMDK">0</td>
-                      <td>Kg</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">Capseal</th>
-                      <td id="totalCapseal">0</td>
-                      <td>Roll</td>
-                    </tr>
-                    <tr>
-                      <th scope="row" id="namaKarton">Karton </th>
-                      <td id="totalKarton">0</td>
-                      <td>Lembar</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">Packing Tape</th>
-                      <td id="totalPackingTape">0</td>
-                      <td>Roll</td>
-                    </tr>
-                    <tr>
-                      <th scope="row" id="namaKartonBl">Karton (Bl)</th>
-                      <td id="totalKartonBl">0</td>
-                      <td>Lembar</td>
-                    </tr>
-                    
-                  </tbody>
-                </table>
-
-
-                <!-- Modal Prefrom -->
-                  <div class="modal fade" id="preform" tabindex="-1" aria-labelledby="preformLabel" aria-hidden="true">
-                      <div class="modal-dialog">
-                        <div class="modal-content">
-                          <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="preformLabel">Modal Prefrom</h1>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                          </div>
-                          <div class="modal-body">
-                            <form class="row g-3 needs-validation" novalidate>
-                              <div class="col-md-12">
-                                <button type="button" class="btn btn-danger" onclick=tambahKrj() >add from keranjang</button>
-                              </div>
-                              <div class="col-md-12">
-                                <div id="awalKeranjang">
-                                  <div class="input-group has-validation">
-                                    <input type="number" placeholder="0" class="form-control text-right keranjang" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
-                                    <span class="input-group-text" id="inputGroupPrepend"><i class="bi bi-cart"></i></span>
-                                    <div class="invalid-feedback">  
-                                      Please choose a username.
-                                    </div>
-                                  </div>
-                                </div> 
-                                <div id="keranjang">
-                                  
-                                </div>
-                            </div>
-                            <!-- pcs -->
-                            <div class="col-md-12">
-                              <button type="button" class="btn btn-danger" onclick=tambahPcs() >add from Pcs</button>
-                            </div>
-                              <div class="col-md-12">
-                                <div id="awalPcs">
-                                  <div class="input-group has-validation">
-                                    <input type="number" placeholder="0" class="form-control text-right pcs" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
-                                    <span class="input-group-text" id="inputGroupPrepend">Pcs</span>
-                                    <div class="invalid-feedback">  
-                                      Please choose a username.
-                                    </div>
-                                  </div>
-                                </div>  
-                                <div id="pcs">
-                                  
-                                </div>
-                              </div>
-                            </div>
-                            <div class="modal-footer">
-                              <button type="button" id="check" data-bs-dismiss="modal" class="btn btn-danger">check</button>                           
-                            </div>
-                          </div>
-                        </form>
-                      </div>
-                  </div>
-            
-                <!-- Modal cap -->
-                  <div class="modal fade" id="cap" tabindex="-1" aria-labelledby="capLabel" aria-hidden="true">
-                      <div class="modal-dialog">
-                        <div class="modal-content">
-                          <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="capLabel">Modal cap</h1>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                          </div>
-                          <div class="modal-body">
-                            <form class="row g-3 needs-validation" novalidate>
-                              <div class="col-md-12">
-                                <button type="button" class="btn btn-danger" onclick=tambahCap() >add form</button>
-                              </div>
-                              <div class="col-md-12">
-                                <div id="awalPalletCap">
-                                  <div class="input-group has-validation">
-                                    <input type="number" placeholder="0" class="form-control text-right palletCap" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
-                                    <span class="input-group-text" id="inputGroupPrepend">Pallet</span>
-                                    <div class="invalid-feedback">  
-                                      Please choose a username.
-                                    </div>
-                                  </div>
-                                </div>  
-                                <div id="palletCap">
-                                  
-                                </div>
-                            </div>
-                           <!-- box -->
-                           <div class="col-md-12">
-                            <button type="button" class="btn btn-danger" onclick=tambahBoxCap() >add from</button>
-                          </div>
-                              <div class="col-md-12">
-                                <div id="awalbox">
-                                  <div class="input-group has-validation">
-                                    <input type="number" placeholder="0" class="form-control text-right box" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
-                                    <span class="input-group-text" id="inputGroupPrepend">box</span>
-                                    <div class="invalid-feedback">  
-                                      Please choose a username.
-                                    </div>
-                                  </div>
-                                </div> 
-                                <div id="boxCap">
-                                  
-                                </div>
-                              </div>
-                            </div>
-                            <div class="modal-footer">
-                              <button type="button" id="saveCap" data-bs-dismiss="modal" class="btn btn-danger">check</button>
-                            </div>
-                          </div>
-                        </form>
-                      </div>
-                  </div>
-
-                <!-- Modal labelReg -->
-                  <div class="modal fade" id="labelReg" tabindex="-1" aria-labelledby="labelRegLabel" aria-hidden="true">
-                      <div class="modal-dialog">
-                        <div class="modal-content">
-                          <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="labelRegLabel">Modal label Reg</h1>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                          </div>
-                          <div class="modal-body">
-                            <form class="row g-3 needs-validation" novalidate>
-                              <div class="col-md-12">
-                                <button type="button" class="btn btn-danger" onclick=tambahlabelReg() >add form</button>
-                              </div>
-                              <div class="col-md-12">
-                                <div id="awallabelReg">
-                                  <div class="input-group has-validation">
-                                    <input type="number" placeholder="0" class="form-control text-right boxLabel" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
-                                    <span class="input-group-text" id="inputGroupPrepend">Box</span>
-                                    <div class="invalid-feedback">  
-                                      Please choose a username.
-                                    </div>
-                                  </div>
-                                </div> 
-                                <div id="akhirlabelReg">
-                                  
-                                </div>
-                            </div>
-                           <!-- roll -->
-                           <div class="col-md-12">
-                            <button type="button" class="btn btn-danger" onclick=tambahRollLabelReg() >add form</button>
-                          </div>
-                              <div class="col-md-12">
-                                <div id="awalrollLabel">
-                                  <div class="input-group has-validation">
-                                    <input type="number" placeholder="0" class="form-control text-right rollLabel" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
-                                    <span class="input-group-text" id="inputGroupPrepend">Roll</span>
-                                    <div class="invalid-feedback">  
-                                      Please choose a username.
-                                    </div>
-                                  </div>
-                                </div>  
-                                <div id="rollLabel">
-                                  
-                                </div>
-                              </div>
-                            </div>
-                            <div class="modal-footer">
-                              <button type="button" id="savelabelReg" data-bs-dismiss="modal" class="btn btn-danger">check</button>
-                            </div>
-                          </div>
-                        </form>
-                      </div>
-                  </div>
-
-                <!-- Modal labelExp -->
-                  <div class="modal fade" id="labelExp" tabindex="-1" aria-labelledby="labelExpLabel" aria-hidden="true">
-                      <div class="modal-dialog">
-                        <div class="modal-content">
-                          <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="labelExpLabel">Modal label Exp</h1>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                          </div>
-                          <div class="modal-body">
-                            <form class="row g-3 needs-validation" novalidate>
-                              <div class="col-md-12">
-                                <button type="button" class="btn btn-danger" onclick=tambahlabelExp() >add form</button>
-                              </div>
-                              <div class="col-md-12">
-                                <div id="awallabelExp">
-                                  <div class="input-group has-validation">
-                                    <input type="number" placeholder="0" class="form-control text-right boxLabelExp" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
-                                    <span class="input-group-text" id="inputGroupPrepend">Box</span>
-                                    <div class="invalid-feedback">  
-                                      Please choose a username.
-                                    </div>
-                                  </div>
-                                </div>
-                                <div id="akhirlabelExp">
-                                  
-                                </div>
-                            </div>
-                           <!-- roll -->
-                           <div class="col-md-12">
-                            <button type="button" class="btn btn-danger" onclick=tambahRollLabelExp() >add form</button>
-                          </div>
-                              <div class="col-md-12">
-                                <div id="awalrollLabelExp">
-                                  <div class="input-group has-validation">
-                                    <input type="number" placeholder="0" class="form-control text-right rollLabelExp" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
-                                    <span class="input-group-text" id="inputGroupPrepend">Roll</span>
-                                    <div class="invalid-feedback">  
-                                      Please choose a username.
-                                    </div>
-                                  </div>
-                                </div> 
-                                <div id="rollLabelExp">
-                                  
-                                </div>
-                              </div>
-                            </div>
-                            <div class="modal-footer">
-                              <button type="button" id="savelabelExp" data-bs-dismiss="modal" class="btn btn-danger">check</button>
-                            </div>
-                          </div>
-                        </form>
-                      </div>
-                  </div>
-
-                <!-- Modal LemAMDK -->
-                  <div class="modal fade" id="LemAMDK" tabindex="-1" aria-labelledby="LemAMDKLabel" aria-hidden="true">
-                      <div class="modal-dialog">
-                        <div class="modal-content">
-                          <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="LemAMDKLabel">Modal Lem AMDK</h1>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                          </div>
-                          <div class="modal-body">
-                            <form class="row g-3 needs-validation" novalidate>
-                              <div class="col-md-12">
-                                <button type="button" class="btn btn-danger" onclick=tambahLemAMDK() >add form</button>
-                              </div>
-                              <div class="col-md-12">  
-                                <div id="awalLemAMDK">
-                                  <div class="input-group has-validation">
-                                    <input type="number" placeholder="0" class="form-control text-right boxLemAMDK" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
-                                    <span class="input-group-text" id="inputGroupPrepend">Box</span>
-                                    <div class="invalid-feedback">  
-                                      Please choose a username.
-                                    </div>
-                                  </div>
-                                </div> 
-                                <div id="akhirLemAMDK">
-                                  
-                                </div>
-                            </div>
-                           <!-- kg -->
-                           <div class="col-md-12">
-                            <button type="button" class="btn btn-danger" onclick=tambahKgLemAMDK() >add form</button>
-                          </div>
-                              <div class="col-md-12">
-                                <div id="awalkgLemAMDK">
-                                  <div class="input-group has-validation">
-                                    <input type="number" placeholder="0" class="form-control text-right kg" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
-                                    <span class="input-group-text" id="inputGroupPrepend">Kg</span>
-                                    <div class="invalid-feedback">  
-                                      Please choose a username.
-                                    </div>
-                                  </div>
-                                </div>
-                                  
-                                <div id="kgLemAMDK">
-                                  
-                                </div>
-                              </div>
-                            </div>
-                            <div class="modal-footer">
-                              <button type="button" id="saveLemAMDK" data-bs-dismiss="modal" class="btn btn-danger">check</button>
-                            </div>
-                          </div>
-                        </form>
-                      </div>
-                  </div>  
-
-                <!-- Modal Capseal -->
-                  <div class="modal fade" id="Capseal" tabindex="-1" aria-labelledby="CapsealLabel" aria-hidden="true">
-                      <div class="modal-dialog">
-                        <div class="modal-content">
-                          <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="CapsealLabel">Modal Capseal</h1>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                          </div>
-                          <div class="modal-body">
-                            <form class="row g-3 needs-validation" novalidate>
-                              <div class="col-md-12">
-                                <button type="button" class="btn btn-danger" onclick=tambahCapseal() >add form</button>
-                              </div>
-                              <div class="col-md-12">
-                                <div id="awalCapseal">
-                                  <div class="input-group has-validation">
-                                    <input type="number" placeholder="0" class="form-control text-right boxCapseal" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
-                                    <span class="input-group-text" id="inputGroupPrepend">Box</span>
-                                    <div class="invalid-feedback">  
-                                      Please choose a username.
-                                    </div>
-                                  </div>
-                                </div>
-                                <div id="akhirCapseal">
-                                  
-                                </div>
-                              </div>
-                             
-                           <!-- roll -->
-                           <div class="col-md-12">
-                            <button type="button" class="btn btn-danger" onclick=tambahRollCapseal() >add form</button>
-                            </div>
-                              <div class="col-md-12">
-                                <div id="awalrollCapseal">
-                                  <div class="input-group has-validation">
-                                    <input type="number" placeholder="0" class="form-control text-right rollCapseal" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
-                                    <span class="input-group-text" id="inputGroupPrepend">roll</span>
-                                    <div class="invalid-feedback">  
-                                      Please choose a username.
-                                    </div>
-                                  </div>
-                                </div> 
-                                <div id="rollCapseal">
-                                  
-                                </div>
-                              </div>
-                            </div>
-                            <div class="modal-footer">
-                              <button type="button" id="saveCapseal" data-bs-dismiss="modal" class="btn btn-danger">check</button>
-                            </div>
-                          </div>
-                        </form>
-                      </div>
-                  </div>  
-
-                <!-- Modal PackingTape -->
-                  <div class="modal fade" id="PackingTape" tabindex="-1" aria-labelledby="PackingTapeLabel" aria-hidden="true">
-                      <div class="modal-dialog">
-                        <div class="modal-content">
-                          <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="PackingTapeLabel">Modal Packing Tape</h1>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                          </div>
-                          <div class="modal-body">
-                            <form class="row g-3 needs-validation" novalidate>
-                              <div class="col-md-12">
-                                <button type="button" class="btn btn-danger" onclick=tambahPackingTape() >add form</button>
-                              </div>
-                              <div class="col-md-12">
-                                <div id="awalPackingTape">
-                                  <div class="input-group has-validation">
-                                    <input type="number" placeholder="0" class="form-control text-right boxPackingTape" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
-                                    <span class="input-group-text" id="inputGroupPrepend">Box</span>
-                                    <div class="invalid-feedback">  
-                                      Please choose a username.
-                                    </div>
-                                  </div>
-                                </div>
-                                <div id="akhirPackingTape">
-                                  
-                                </div>
-                              </div>
-                             
-                           <!-- roll -->
-                           <div class="col-md-12">
-                            <button type="button" class="btn btn-danger" onclick=tambahRollPackingTape() >add form</button>
-                            </div>
-                              <div class="col-md-12">
-                                <div id="awalrollPackingTape">
-                                  <div class="input-group has-validation">
-                                    <input type="number" placeholder="0" class="form-control text-right rollPackingTape" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
-                                    <span class="input-group-text" id="inputGroupPrepend">roll</span>
-                                    <div class="invalid-feedback">  
-                                      Please choose a username.
-                                    </div>
-                                  </div>
-                                </div> 
-                                <div id="rollPackingTape">
-                                  
-                                </div>
-                              </div>
-                            </div>
-                            <div class="modal-footer">
-                              <button type="button" id="savePackingTape" data-bs-dismiss="modal" class="btn btn-danger">check</button>
-                            </div>
-                          </div>
-                        </form>
-                      </div>
-                  </div>  
-                   
-                <!-- Modal Karton -->
-                  <div class="modal fade" id="Karton" tabindex="-1" aria-labelledby="KartonLabel" aria-hidden="true">
-                      <div class="modal-dialog">
-                        <div class="modal-content">
-                          <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="KartonLabel">Modal Karton</h1>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                          </div>
-                          <div class="modal-body">
-                            <form class="row g-3 needs-validation" novalidate>
-                              <div class="col-lg-12">
-                                <select class="form-select namaKarton" aria-label="Default select example">
-                                  <option selected disabled>Jensi Karton</option>
-                                  <option value="Promo">Promo</option>
-                                  <option value="Reguler">Reguler</option>
-                                  <option value="Phill">Phill</option>
-                                  <option value="PhillPromo">Phill Promo</option>
-                                </select>
-                              </div>
-                              <div class="col-md-12">
-                                <button type="button" class="btn btn-danger" onclick=tambahKarton() >add form</button>
-                              </div>
-                              <div class="col-md-12">
-                                <div id="awalKarton">
-                                  <div class="input-group has-validation">
-                                    <input type="number" placeholder="0" class="form-control text-right palletKarton" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
-                                    <span class="input-group-text" id="inputGroupPrepend">Pallet</span>
-                                    <div class="invalid-feedback">  
-                                      Please choose a username.
-                                    </div>
-                                  </div>
-                                </div>
-                                <div id="akhirKarton">
-                                  
-                                </div>
-                              </div>
-                             
-                           <!-- lbr -->
-                           <div class="col-md-12">
-                            <button type="button" class="btn btn-danger" onclick=tambahLbrKarton() >add form</button>
-                            </div>
-                              <div class="col-md-12">
-                                <div id="awallbrKarton">
-                                  <div class="input-group has-validation">
-                                    <input type="number" placeholder="0" class="form-control text-right lbrKarton" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
-                                    <span class="input-group-text" id="inputGroupPrepend">lbr</span>
-                                    <div class="invalid-feedback">  
-                                      Please choose a username.
-                                    </div>
-                                  </div>
-                                </div> 
-                                <div id="lbrKarton">
-                                  
-                                </div>
-                              </div>
-                            </div>
-                            <div class="modal-footer">
-                              <button type="button" id="saveKarton" data-bs-dismiss="modal" class="btn btn-danger">check</button>
-                            </div>
-                          </div>
-                        </form>
-                      </div>
-                  </div>
-
-                <!-- Modal Karton Bl -->
-                  <div class="modal fade" id="KartonBl" tabindex="-1" aria-labelledby="KartonBlLabel" aria-hidden="true">
-                      <div class="modal-dialog">
-                        <div class="modal-content">
-                          <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="KartonBlLabel">Modal Karton (Bl)</h1>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                          </div>
-                          <div class="modal-body">
-                            <form class="row g-3 needs-validation" novalidate>
-                              <div class="col-lg-12">
-                                <select class="form-select namaKartonBl" aria-label="Default select example">
-                                  <option selected disabled>Jensi Karton</option>
-                                  <option value="Promo">Promo</option>
-                                  <option value="Reguler">Reguler</option>
-                                  <option value="Phill">Phill</option>
-                                  <option value="PhillPromo">Phill Promo</option>
-                                </select>
-                              </div>
-                              <div class="col-md-12">
-                                <button type="button" class="btn btn-danger" onclick=tambahKartonBl() >add form</button>
-                              </div>
-                              <div class="col-md-12">
-                                <div id="awalKartonBl">
-                                  <div class="input-group has-validation">
-                                    <input type="number" placeholder="0" class="form-control text-right palletKartonBl" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
-                                    <span class="input-group-text" id="inputGroupPrepend">Pallet</span>
-                                    <div class="invalid-feedback">  
-                                      Please choose a username.
-                                    </div>
-                                  </div>
-                                </div>
-                                <div id="akhirKartonBl">
-                                  
-                                </div>
-                              </div>
-                             
-                           <!-- lbr -->
-                           <div class="col-md-12">
-                            <button type="button" class="btn btn-danger" onclick=tambahLbrKartonBl() >add form</button>
-                           </div>
-                              <div class="col-md-12">
-                                <div id="awallbrKartonBl">
-                                  <div class="input-group has-validation">
-                                    <input type="number" placeholder="0" class="form-control text-right lbrKartonBl" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
-                                    <span class="input-group-text" id="inputGroupPrepend">lbr</span>
-                                    <div class="invalid-feedback">  
-                                      Please choose a username.
-                                    </div>
-                                  </div>
-                                </div> 
-                                <div id="lbrKartonBl">
-                                  
-                                </div>
-                              </div>
-                            </div>
-                            <div class="modal-footer">
-                              <button type="button" id="saveKartonBl" data-bs-dismiss="modal" class="btn btn-danger">check</button>
-                            </div>
-                          </div>
-                        </form>
-                      </div>
-                  </div>  
-                    
-
+              <a href="line_satu/index.html" class="fs-3 text-uppercase">Line 1</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 mb-3 shadow-sm">
+          <div class="card">
+            <div class="card-body">
+              <a href="line_dua/index.html" class="fs-3 text-uppercase">Line 2</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 mb-3 shadow-sm">
+          <div class="card">
+            <div class="card-body">
+              <a href="line_tiga/index.html" class="fs-3 text-uppercase">line 3</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 mb-3 shadow-sm">
+          <div class="card">
+            <div class="card-body">
+              <a href="line_empat/index.html" class="fs-3 text-uppercase">line 4</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 mb-3 shadow-sm">
+          <div class="card">
+            <div class="card-body">
+              <a href="line_lima/index.html" class="fs-3 text-uppercase">line 5</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 mb-3 shadow-sm">
+          <div class="card">
+            <div class="card-body">
+              <a href="line_lima/index.html" class="fs-3 text-uppercase">line 6</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 mb-3 shadow-sm">
+          <div class="card">
+            <div class="card-body">
+              <a href="line_lima/index.html" class="fs-3 text-uppercase">line 7</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 mb-3 shadow-sm">
+          <div class="card">
+            <div class="card-body">
+              <a href="line_lima/index.html" class="fs-3 text-uppercase">line 8</a>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-
-
-    <script src="js/pengecekan.js"></script>
+    <footer class="text-white text-center">
+      <p style="font-family: 'Dancing Script', cursive">Created With <i class="bi bi-suit-heart-fill text-dark"></i> By <a href="https://www.instagram.com/masreyxlvi/" target="_blank" class="text-white">Masreyxlvi</a></p>
+    </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
-    <script src="js/jquery.js"></script>
-    <script src="js/preform.js"></script>
-    <script src="js/cap.js"></script>
-    <script src="js/capseal.js"></script>
-    <script src="js/labelExp.js"></script>
-    <script src="js/labelReg.js"></script>
-    <script src="js/LemAMDK.js"></script>
-    <script src="js/karton.js"></script>
-    <script src="js/pt.js"></script>
-    <script src="js/b1.js"></script>
-    <script src="js/tambah.js"></script>
   </body>
 </html>
