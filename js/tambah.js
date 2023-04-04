@@ -35,8 +35,8 @@ function tambahlemAdtek() {
   $("#awallemAdtek").clone().appendTo($("#akhirlemAdtek"));
 }
 
-function tambahKglemAMDK() {
-  $("#awalkglemAMDK").clone().appendTo($("#kglemAMDK"));
+function tambahKgLemAMDK() {
+  $("#awalkglemAMDK").clone().appendTo($("#kgLemAMDK"));
 }
 
 function tambahKglemAdtek() {
@@ -66,9 +66,27 @@ function tambahRollPackingTape() {
   $("#awalrollPackingTape").clone().appendTo($("#rollPackingTape"));
 }
 
-function tambahKartonBl() {
-  $("#awalKartonBl").clone().appendTo($("#akhirKartonBl"));
+function tambahPromo() {
+  $("#awalPromo").clone().appendTo($("#akhirPromo"));
 }
-function tambahLbrKartonBl() {
-  $("#awallbrKartonBl").clone().appendTo($("#lbrKartonBl"));
+function tambahLbrPromo() {
+  $("#awallbrPromo").clone().appendTo($("#lbrPromo"));
+}
+function tambahReguler() {
+  $("#awalReguler").clone().appendTo($("#akhirReguler"));
+}
+function tambahLbrReguler() {
+  $("#awallbrReguler").clone().appendTo($("#lbrReguler"));
+}
+function tambahphillPromo() {
+  $("#awalphillPromo").clone().appendTo($("#akhirphillPromo"));
+}
+function tambahLbrphillPromo() {
+  $("#awallbrphillPromo").clone().appendTo($("#lbrphillPromo"));
+}
+function tambahphillReguler() {
+  $("#awalphillReguler").clone().appendTo($("#akhirphillReguler"));
+}
+function tambahLbrphillReguler() {
+  $("#awallbrphillReguler").clone().appendTo($("#lbrphillReguler"));
 }

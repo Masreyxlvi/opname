@@ -5,7 +5,7 @@ $(function () {
 
     $(".boxLabel").each(function () {
       var num = $(this).val().replace(",", "");
-      if (num != 0 && jenisLabel == "Reguler") {
+      if (jenisLabel == "Reguler") {
         sum += parseFloat(num) * 2;
       } else {
         sum += parseFloat(num) * 3;
