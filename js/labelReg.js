@@ -5,10 +5,14 @@ $(function () {
 
     $(".boxLabel").each(function () {
       var num = $(this).val().replace(",", "");
-      if (jenisLabel == "Reguler") {
+      if (jenisLabel == "2") {
         sum += parseFloat(num) * 2;
-      } else {
+      } else if (jenisLabel == "3") {
         sum += parseFloat(num) * 3;
+      } else if (jenisLabel == "4") {
+        sum += parseFloat(num) * 4;
+      } else {
+        sum += parseFloat(num) * 6;
       }
       // alert(option)
     });
