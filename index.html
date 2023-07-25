@@ -961,6 +961,7 @@
 
     <script>
       function whatsapp() {
+        var line = document.getElementById("line").value;
         var shift = document.getElementById("shift").value;
         var labelReg = document.getElementById("totalLabelReg").innerHTML;
         var labelExp = document.getElementById("totalLabelExp").innerHTML;
@@ -978,36 +979,37 @@
         if(Promo == 0){
           var kartonPromo = "";
         }else{
-          var kartonPromo = "Promo : " + Promo + " Lembar";
+          var kartonPromo = "Promo : " + Promo + " Lembar"+"%0a";
         }
         if(Reguler == 0){
           var kartonReguler = "";
         }else{
-          var kartonReguler = "Reguler : " + Reguler + " Lembar";
+          var kartonReguler = "Reguler : " + Reguler + " Lembar"+"%0a";
         }
         if(phillPromo == 0){
           var kartonphillPromo = "";
         }else{
-          var kartonphillPromo = "phillPromo : " + phillPromo + " Lembar";
+          var kartonphillPromo = "phillPromo : " + phillPromo + " Lembar"+"%0a";
         }
         if(phillReguler == 0){
           var kartonphillReguler = "";
         }else{
-          var kartonphillReguler = "phillReguler : " + phillReguler + " Lembar";
+          var kartonphillReguler = "phillReguler : " + phillReguler + " Lembar"+"%0a";
         }
          
         
         var url = "https://wa.me/+62"+no_wa+"?text=" 
-        + "*Hasil Opname Line 5 Shift "+ shift +"*"+"%0a"+"%0a"
+        + "*Hasil Opname Line "+line+ " Shift "+ shift +"*"+"%0a"+"%0a"
         + "Label Reguler" +   " : " + labelReg + " Roll"+"%0a"
         + "Label Exp" +   " : " + labelExp + " Roll"+"%0a"
         + "Capseal" +   " : " + Capseal + " Roll"+"%0a"
+        + "Karton" +   " : " + karton + " Roll"+"%0a"
         + "Lem AMDK" +   " : " + LemAMDK + " Kg"+"%0a"
         + "Packing Tape" +   " : " + PackingTape + " Roll"+"%0a"+"%0a"
         + "====== Karton ======"+"%0a"
-        + kartonPromo+"%0a"
-        + kartonReguler+"%0a"
-        + kartonphillPromo+"%0a"
+        + kartonPromo
+        + kartonReguler  
+        + kartonphillPromo
         + kartonphillReguler
 
         window.open(url, "_blank").focus();
