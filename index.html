@@ -964,6 +964,8 @@
       function whatsapp() {
         var line = document.getElementById("line").value;
         var shift = document.getElementById("shift").value;
+        var Preform = document.getElementById("totalPreform").innerHTML;
+        var Cap = document.getElementById("totalCap").innerHTML;
         var labelReg = document.getElementById("totalLabelReg").innerHTML;
         var labelExp = document.getElementById("totalLabelExp").innerHTML;
         var Capseal = document.getElementById("totalCapseal").innerHTML;
@@ -1001,6 +1003,8 @@
         
         var url = "https://wa.me/+62"+no_wa+"?text=" 
         + "*Hasil Opname Line "+line+ " Shift "+ shift +"*"+"%0a"+"%0a"
+        + "Preform" +   " : " + Preform + " Pcs"+"%0a"
+        + "Cap" +   " : " + Cap + " Pcs"+"%0a"
         + "Label Reguler" +   " : " + labelReg + " Roll"+"%0a"
         + "Label Exp" +   " : " + labelExp + " Roll"+"%0a"
         + "Capseal" +   " : " + Capseal + " Roll"+"%0a"

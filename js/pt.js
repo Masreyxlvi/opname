@@ -6,7 +6,7 @@ $(function () {
     $(".boxPackingTape").each(function () {
       var num = $(this).val().replace(",", "");
       // alert(option);
-      if (num != 0 && option == "dua_belas") {
+      if ( option == "dua_belas") {
         sum += parseFloat(num) * 12;
       } else {
         sum += parseFloat(num) * 20;
