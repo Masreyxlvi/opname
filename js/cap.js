@@ -1,20 +1,22 @@
 $(function () {
   var total_cap = function () {
     var sumCap = 0;
+    var qtyCap = $(".jenisCap").val();
 
     $(".palletCap").each(function () {
       var numCap = $(this).val().replace(",", "");
-      // alert(option)
-      if (numCap != 0) {
+      if (qtyCap == "3600") {
         sumCap += parseFloat(numCap) * 72000;
+      } else {
+        sumCap += parseFloat(numCap) * 43000;
       }
-      // alert(sumCap);
     });
     $(".box").each(function () {
       var numCap = $(this).val().replace(",", "");
-      // alert(option)
-      if (numCap != 0) {
+      if (qtyCap == "3600") {
         sumCap += parseFloat(numCap) * 3600;
+      } else {
+        sumCap += parseFloat(numCap) * 2150;
       }
       // alert(option)
     });

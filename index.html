@@ -27,6 +27,10 @@
                   <button type="button" class="btn btn-outline-danger mb-2" data-bs-toggle="modal" data-bs-target="#cap">
                   Cap
                 </button>
+                  <!-- HandleGrip -->
+                  <button type="button" class="btn btn-outline-danger mb-2" data-bs-toggle="modal" data-bs-target="#HandleGrip">
+                  Handle Grip
+                </button>
 
                 <!-- Label Reg -->
                 <button type="button" class="btn btn-outline-danger mb-2" data-bs-toggle="modal" data-bs-target="#labelReg">
@@ -94,6 +98,11 @@
                     <tr>
                       <th scope="row">Cap</th>
                       <td id="totalCap">0</td>
+                      <td>pcs</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Handle Grip</th>
+                      <td id="totalHandleGrip">0</td>
                       <td>pcs</td>
                     </tr>
                     <tr>
@@ -260,6 +269,14 @@
                           </div>
                           <div class="modal-body">
                             <form class="row g-3 needs-validation" novalidate>
+                              <div class="col-lg-12">
+                                <select class="form-select jenisCap" required aria-label="Default select example">
+                                  <option selected disabled>Jumlah Cap</option>
+                                  <option value="3600">3600</option>
+                                  <option value="2150">2150</option>
+
+                                </select>
+                              </div>
                               <div class="col-md-12">
                                 <button type="button" class="btn btn-danger" onclick=tambahCap() >add form</button>
                               </div>
@@ -299,6 +316,63 @@
                             </div>
                             <div class="modal-footer">
                               <button type="button" id="saveCap" data-bs-dismiss="modal" class="btn btn-danger">check</button>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                  </div>
+                <!-- Modal Handle Grip -->
+                  <div class="modal fade" id="HandleGrip" tabindex="-1" aria-labelledby="HandleGripLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="HandleGrip">Modal Handle Grip</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            <form class="row g-3 needs-validation" novalidate>
+                              <div class="col-lg-12">
+                               
+                              </div>
+                              <div class="col-md-12">
+                                <button type="button" class="btn btn-danger" onclick=tambahHandleGrip() >add form</button>
+                              </div>
+                             
+                              <div class="col-md-12">
+                                <div id="awalPalletHandleGrip">
+                                  <div class="input-group has-validation">
+                                    <input type="number" placeholder="0" class="form-control text-right palletHandleGrip" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
+                                    <span class="input-group-text" id="inputGroupPrepend">Pallet</span>
+                                    <div class="invalid-feedback">  
+                                      Please choose a username.
+                                    </div>
+                                  </div>
+                                </div>  
+                                <div id="palletHandleGrip">
+                                  
+                                </div>
+                            </div>
+                           <!-- box -->
+                           <div class="col-md-12">
+                            <button type="button" class="btn btn-danger" onclick=tambahBoxHandleGrip() >add from</button>
+                          </div>
+                              <div class="col-md-12">
+                                <div id="awalbox">
+                                  <div class="input-group has-validation">
+                                    <input type="number" placeholder="0" class="form-control text-right boxHandleGrip" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
+                                    <span class="input-group-text" id="inputGroupPrepend">box</span>
+                                    <div class="invalid-feedback">  
+                                      Please choose a username.
+                                    </div>
+                                  </div>
+                                </div> 
+                                <div id="boxHandleGrip">
+                                  
+                                </div>
+                              </div>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" id="saveHandleGrip" data-bs-dismiss="modal" class="btn btn-danger">check</button>
                             </div>
                           </div>
                         </form>
@@ -777,7 +851,7 @@
                           </div>
                           <div class="modal-body">
                             <form class="row g-3 needs-validation" novalidate>
-
+                              
                               <div class="col-md-12">
                                 <button type="button" class="btn btn-danger" onclick=tambahReguler() >add form</button>
                               </div>
@@ -953,6 +1027,7 @@
     <script src="js/labelReg.js"></script>
     <script src="js/karton.js"></script>
     <script src="js/pt.js"></script>
+    <script src="js/HandleGrip.js"></script>
     <script src="js/LemAMDK.js"></script>
     <script src="js/promo.js"></script>
     <script src="js/phill_promo.js"></script>
@@ -966,6 +1041,7 @@
         var shift = document.getElementById("shift").value;
         var Preform = document.getElementById("totalPreform").innerHTML;
         var Cap = document.getElementById("totalCap").innerHTML;
+        var HandleGrip = document.getElementById("totalHandleGrip").innerHTML;
         var labelReg = document.getElementById("totalLabelReg").innerHTML;
         var labelExp = document.getElementById("totalLabelExp").innerHTML;
         var Capseal = document.getElementById("totalCapseal").innerHTML;
@@ -1005,10 +1081,11 @@
         + "*Hasil Opname Line "+line+ " Shift "+ shift +"*"+"%0a"+"%0a"
         + "Preform" +   " : " + Preform + " Pcs"+"%0a"
         + "Cap" +   " : " + Cap + " Pcs"+"%0a"
+        + "Handle Grip" +   " : " + HandleGrip + " Pcs"+"%0a"
         + "Label Reguler" +   " : " + labelReg + " Roll"+"%0a"
         + "Label Exp" +   " : " + labelExp + " Roll"+"%0a"
         + "Capseal" +   " : " + Capseal + " Roll"+"%0a"
-        + "Karton" +   " : " + karton + " Roll"+"%0a"
+        + "Karton " + namaKarton +  " : " + karton + " Lembar"+"%0a"
         + "Lem AMDK" +   " : " + LemAMDK + " Kg"+"%0a"
         + "Packing Tape" +   " : " + PackingTape + " Roll"+"%0a"+"%0a"
         + "====== Karton ======"+"%0a"

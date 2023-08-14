@@ -12,6 +12,13 @@ function tambahCap() {
 function tambahBoxCap() {
   $("#awalbox").clone().appendTo($("#boxCap"));
 }
+function tambahHandleGrip() {
+  $("#awalPalletHandleGrip").clone().appendTo($("#palletHandleGrip"));
+}
+
+function tambahBoxHandleGrip() {
+  $("#awalbox").clone().appendTo($("#boxHandleGrip"));
+}
 
 function tambahlabelReg() {
   $("#awallabelReg").clone().appendTo($("#akhirlabelReg"));
