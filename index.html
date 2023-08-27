@@ -1046,57 +1046,6 @@
 
     <script>
       function whatsapp() {
-      //   var line = document.getElementById("line").value;
-      //   var shift = document.getElementById("shift").value;
-      //   var Preform = document.getElementById("totalPreform").innerHTML;
-      //   var Cap = document.getElementById("totalCap").innerHTML;
-      //   var HandleGrip = document.getElementById("totalHandleGrip").innerHTML;
-      //   var labelReg = document.getElementById("totalLabelReg").innerHTML;
-      //   var labelExp = document.getElementById("totalLabelExp").innerHTML;
-      //   var Capseal = document.getElementById("totalCapseal").innerHTML;
-      //   var LemAMDK= document.getElementById("totalLemAMDK").innerHTML;
-      //   var PackingTape= document.getElementById("totalPackingTape").innerHTML;
-      //   var karton = document.getElementById("totalKarton").innerHTML;
-      //   var namaKarton = document.getElementById("namaKarton").innerHTML;
-      //   var Promo = document.getElementById("totalPromo").innerHTML;
-      //   var Reguler = document.getElementById("totalReguler").innerHTML;
-      //   var phillPromo = document.getElementById("totalphillPromo").innerHTML;
-      //   var phillReguler = document.getElementById("totalphillReguler").innerHTML;
-      //   var no_wa = document.getElementById("no_wa").value;
-       
-    
-
-        
-      //  // Inisialisasi variabel
-      //   var kartonPromo = (Promo === 0) ? "" : "Promo : " + Promo + " Lembar" + "%0a";
-      //   var kartonReguler = (Reguler === 0) ? "" : "Reguler : " + Reguler + " Lembar" + "%0a";
-      //   var kartonphillPromo = (phillPromo === 0) ? "" : "phillPromo : " + phillPromo + " Lembar" + "%0a";
-      //   var kartonphillReguler = (phillReguler === 0) ? "" : "phillReguler : " + phillReguler + " Lembar" + "%0a";
-        
-      //   // Penggunaan variabel
-      //   // Anda dapat menggunakan kartonPromo, kartonReguler, kartonphillPromo, dan kartonphillReguler sesuai kebutuhan Anda.
-        
-        
-        
-      //   var url = "https://wa.me/+62"+no_wa+"?text=" 
-      //   + "*Hasil Opname Line "+line+ " Shift "+ shift +"*"+"%0a"+"%0a"
-      //   + "Preform" +   " : " + Preform + " Pcs"+"%0a"
-      //   console.log(data)
-      //   + "Cap" +   " : " + Cap + " Pcs"+"%0a"
-      //   + "Handle Grip" +   " : " + HandleGrip + " Pcs"+"%0a"
-      //   + "Label Reguler" +   " : " + labelReg + " Roll"+"%0a"
-      //   + "Label Exp" +   " : " + labelExp + " Roll"+"%0a"
-      //   + "Capseal" +   " : " + Capseal + " Roll"+"%0a"
-      //   + "Karton " + namaKarton +  " : " + karton + " Lembar"+"%0a"
-      //   + "Lem AMDK" +   " : " + LemAMDK + " Kg"+"%0a"
-      //   + "Packing Tape" +   " : " + PackingTape + " Roll"+"%0a"+"%0a"
-      //   + "====== Karton ======"+"%0a"
-      //   + kartonPromo
-      //   + kartonReguler  
-      //   + kartonphillPromo
-      //   + kartonphillReguler
-
-      //   window.open(url, "_blank").focus();
        var no_wa = document.getElementById("no_wa").value;
         var line = document.getElementById("line").value;// Gantilah dengan nilai sesuai kebutuhan
         var shift = document.getElementById("shift").value; // Gantilah dengan nilai sesuai kebutuhan
@@ -1124,7 +1073,7 @@
         for (var key in data) {
           var value = document.getElementById(data[key]).innerHTML;
           if (value !== "0") {
-            message += key + " : " + value + (key === "Karton" ? " Lembar" : key === "Lem AMDK" ? " Kg" : " Pcs") + "\n";
+            message += key + " : " + value + (key === "Karton" ? " Lembar" : key === "Lem AMDK" ? " Kg" : key === "Label Reguler"|| "Label Export"||"Packing Tape "? " Roll" : " Pcs") + "\n";
           }
         }
 
@@ -1143,10 +1092,10 @@
             message += "Reguler : " + kartonReguler + " Lembar" + "\n";
           }
           if (kartonphillPromo !== "0") {
-            message += "phillPromo : " + kartonphillPromo + " Lembar" + "\n";
+            message += "Phill Promo : " + kartonphillPromo + " Lembar" + "\n";
           }
           if (kartonphillReguler !== "0") {
-            message += "phillReguler : " + kartonphillReguler + " Lembar" + "\n";
+            message += "Phill Reguler : " + kartonphillReguler + " Lembar" + "\n";
           }
         }
 
