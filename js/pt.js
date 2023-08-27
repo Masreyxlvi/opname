@@ -1,43 +1,23 @@
 $(function () {
   var total_PackingTape = function () {
-    var totalBoxPT = 0; // Variabel untuk menghitung total dari .boxPackingTape
-    var totalRollPT = 0; // Variabel untuk menghitung total dari .rollPT
+    var sum = 0;
     var option = $(".option").val();
 
     $(".boxPackingTape").each(function () {
-      var numPT = $(this).val().replace(",", "");
-      if (!isNaN(numPT)) {
-        if (option == "dua_belas") {
-          totalBoxPT += parseFloat(numPT) * 12;
-        } else {
-          totalBoxPT += parseFloat(numPT) * 20;
-        }
+      var num = $(this).val().replace(",", "");
+      if (option == "dua_belas") {
+        sum += parseFloat(num) * 12;
       } else {
-        // Tangani jika input dalam .boxPackingTape bukan angka atau kosong di sini
+        sum += parseFloat(num) * 20;
       }
     });
-
     $(".rollPT").each(function () {
-      var numPT = $(this).val();
-      alert(numPT);
-      if (!isNaN(numPT)) {
-        if (numPT !== 0) {
-          totalRollPT += parseFloat(numPT);
-        }
-      } else {
-        // Tangani jika input dalam .rollPT bukan angka atau kosong di sini
+      var num = $(this).val().replace(",", "");
+      if (num != 0) {
+        sum += parseFloat(num);
       }
     });
-
-    var sumPT = totalBoxPT + totalRollPT; // Menggabungkan total dari .boxPackingTape dan .rollPT
-
-    alert(sumPT);
-
-    if (!isNaN(sumPT)) {
-      $("#totalPackingTape").text(sumPT.toLocaleString("en-US"));
-    } else {
-      $("#totalPackingTape").text("Invalid input");
-    }
+    $("#totalPackingTape").text(sum.toLocaleString("en-US"));
   };
 
   $("#savePackingTape").on("click", function () {
