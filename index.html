@@ -89,7 +89,7 @@
                       <th scope="col">Satuan</th>
                     </tr>
                   </thead>
-                  <tbody class="table-group-divider">
+                  <tbody id="data-opname" class="table-group-divider">
                     <tr>
                       <th scope="row">Preform</th>
                       <td id="totalPreform">0</td>
@@ -517,7 +517,7 @@
                               <div class="col-md-12">  
                                 <div id="awalLemAMDK">
                                   <div class="input-group has-validation">
-                                    <input type="number" placeholder="0" class="form-control text-right boxLemAMDK" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
+                                    <input type="number" placeholder="0" class="form-control text-right boxLemAMDK" id="validationCustomUsername" aria-describedby="inputGroupPrepend" value="0" required>
                                     <span class="input-group-text" id="inputGroupPrepend">Box</span>
                                     <div class="invalid-feedback">  
                                       Please choose a username.
@@ -633,7 +633,7 @@
                               <div class="col-md-12">
                                 <div id="awalPackingTape">
                                   <div class="input-group has-validation">
-                                    <input type="number" placeholder="0" class="form-control text-right boxPackingTape" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
+                                    <input type="number" placeholder="0" class="form-control text-right boxPackingTape" id="validationCustomUsername" aria-describedby="inputGroupPrepend" value="0" required>
                                     <span class="input-group-text" id="inputGroupPrepend">Box</span>
                                     <div class="invalid-feedback">  
                                       Please choose a username.
@@ -652,7 +652,16 @@
                               <div class="col-md-12">
                                 <div id="awalrollPackingTape">
                                   <div class="input-group has-validation">
-                                    <input type="number" placeholder="0" class="form-control text-right rollPackingTape" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
+                                    <input type="number" placeholder="0" class="form-control text-right rollPT" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
+                                    <span class="input-group-text" id="inputGroupPrepend">roll</span>
+                                    <div class="invalid-feedback">  
+                                      Please choose a username.
+                                    </div>
+                                  </div>
+                                </div> 
+                                <div id="awalrollPackingTape">
+                                  <div class="input-group has-validation">
+                                    <input type="number" placeholder="0" class="form-control text-right rollPT" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
                                     <span class="input-group-text" id="inputGroupPrepend">roll</span>
                                     <div class="invalid-feedback">  
                                       Please choose a username.
@@ -1037,64 +1046,114 @@
 
     <script>
       function whatsapp() {
-        var line = document.getElementById("line").value;
-        var shift = document.getElementById("shift").value;
-        var Preform = document.getElementById("totalPreform").innerHTML;
-        var Cap = document.getElementById("totalCap").innerHTML;
-        var HandleGrip = document.getElementById("totalHandleGrip").innerHTML;
-        var labelReg = document.getElementById("totalLabelReg").innerHTML;
-        var labelExp = document.getElementById("totalLabelExp").innerHTML;
-        var Capseal = document.getElementById("totalCapseal").innerHTML;
-        var LemAMDK= document.getElementById("totalLemAMDK").innerHTML;
-        var PackingTape= document.getElementById("totalPackingTape").innerHTML;
-        var karton = document.getElementById("totalKarton").innerHTML;
-        var namaKarton = document.getElementById("namaKarton").innerHTML;
-        var Promo = document.getElementById("totalPromo").innerHTML;
-        var Reguler = document.getElementById("totalReguler").innerHTML;
-        var phillPromo = document.getElementById("totalphillPromo").innerHTML;
-        var phillReguler = document.getElementById("totalphillReguler").innerHTML;
-        var no_wa = document.getElementById("no_wa").value;
+      //   var line = document.getElementById("line").value;
+      //   var shift = document.getElementById("shift").value;
+      //   var Preform = document.getElementById("totalPreform").innerHTML;
+      //   var Cap = document.getElementById("totalCap").innerHTML;
+      //   var HandleGrip = document.getElementById("totalHandleGrip").innerHTML;
+      //   var labelReg = document.getElementById("totalLabelReg").innerHTML;
+      //   var labelExp = document.getElementById("totalLabelExp").innerHTML;
+      //   var Capseal = document.getElementById("totalCapseal").innerHTML;
+      //   var LemAMDK= document.getElementById("totalLemAMDK").innerHTML;
+      //   var PackingTape= document.getElementById("totalPackingTape").innerHTML;
+      //   var karton = document.getElementById("totalKarton").innerHTML;
+      //   var namaKarton = document.getElementById("namaKarton").innerHTML;
+      //   var Promo = document.getElementById("totalPromo").innerHTML;
+      //   var Reguler = document.getElementById("totalReguler").innerHTML;
+      //   var phillPromo = document.getElementById("totalphillPromo").innerHTML;
+      //   var phillReguler = document.getElementById("totalphillReguler").innerHTML;
+      //   var no_wa = document.getElementById("no_wa").value;
+       
+    
 
-        if(Promo == 0){
-          var kartonPromo = "";
-        }else{
-          var kartonPromo = "Promo : " + Promo + " Lembar"+"%0a";
-        }
-        if(Reguler == 0){
-          var kartonReguler = "";
-        }else{
-          var kartonReguler = "Reguler : " + Reguler + " Lembar"+"%0a";
-        }
-        if(phillPromo == 0){
-          var kartonphillPromo = "";
-        }else{
-          var kartonphillPromo = "phillPromo : " + phillPromo + " Lembar"+"%0a";
-        }
-        if(phillReguler == 0){
-          var kartonphillReguler = "";
-        }else{
-          var kartonphillReguler = "phillReguler : " + phillReguler + " Lembar"+"%0a";
-        }
-         
         
-        var url = "https://wa.me/+62"+no_wa+"?text=" 
-        + "*Hasil Opname Line "+line+ " Shift "+ shift +"*"+"%0a"+"%0a"
-        + "Preform" +   " : " + Preform + " Pcs"+"%0a"
-        + "Cap" +   " : " + Cap + " Pcs"+"%0a"
-        + "Handle Grip" +   " : " + HandleGrip + " Pcs"+"%0a"
-        + "Label Reguler" +   " : " + labelReg + " Roll"+"%0a"
-        + "Label Exp" +   " : " + labelExp + " Roll"+"%0a"
-        + "Capseal" +   " : " + Capseal + " Roll"+"%0a"
-        + "Karton " + namaKarton +  " : " + karton + " Lembar"+"%0a"
-        + "Lem AMDK" +   " : " + LemAMDK + " Kg"+"%0a"
-        + "Packing Tape" +   " : " + PackingTape + " Roll"+"%0a"+"%0a"
-        + "====== Karton ======"+"%0a"
-        + kartonPromo
-        + kartonReguler  
-        + kartonphillPromo
-        + kartonphillReguler
+      //  // Inisialisasi variabel
+      //   var kartonPromo = (Promo === 0) ? "" : "Promo : " + Promo + " Lembar" + "%0a";
+      //   var kartonReguler = (Reguler === 0) ? "" : "Reguler : " + Reguler + " Lembar" + "%0a";
+      //   var kartonphillPromo = (phillPromo === 0) ? "" : "phillPromo : " + phillPromo + " Lembar" + "%0a";
+      //   var kartonphillReguler = (phillReguler === 0) ? "" : "phillReguler : " + phillReguler + " Lembar" + "%0a";
+        
+      //   // Penggunaan variabel
+      //   // Anda dapat menggunakan kartonPromo, kartonReguler, kartonphillPromo, dan kartonphillReguler sesuai kebutuhan Anda.
+        
+        
+        
+      //   var url = "https://wa.me/+62"+no_wa+"?text=" 
+      //   + "*Hasil Opname Line "+line+ " Shift "+ shift +"*"+"%0a"+"%0a"
+      //   + "Preform" +   " : " + Preform + " Pcs"+"%0a"
+      //   console.log(data)
+      //   + "Cap" +   " : " + Cap + " Pcs"+"%0a"
+      //   + "Handle Grip" +   " : " + HandleGrip + " Pcs"+"%0a"
+      //   + "Label Reguler" +   " : " + labelReg + " Roll"+"%0a"
+      //   + "Label Exp" +   " : " + labelExp + " Roll"+"%0a"
+      //   + "Capseal" +   " : " + Capseal + " Roll"+"%0a"
+      //   + "Karton " + namaKarton +  " : " + karton + " Lembar"+"%0a"
+      //   + "Lem AMDK" +   " : " + LemAMDK + " Kg"+"%0a"
+      //   + "Packing Tape" +   " : " + PackingTape + " Roll"+"%0a"+"%0a"
+      //   + "====== Karton ======"+"%0a"
+      //   + kartonPromo
+      //   + kartonReguler  
+      //   + kartonphillPromo
+      //   + kartonphillReguler
+
+      //   window.open(url, "_blank").focus();
+       var no_wa = document.getElementById("no_wa").value;
+        var line = document.getElementById("line").value;// Gantilah dengan nilai sesuai kebutuhan
+        var shift = document.getElementById("shift").value; // Gantilah dengan nilai sesuai kebutuhan
+
+        // Objek untuk menyimpan data variabel dan pesan
+        var data = {
+          "Preform": "totalPreform",
+          "Cap": "totalCap",
+          "Handle Grip": "totalHandleGrip",
+          "Label Reguler": "totalLabelReg",
+          "Label Exp": "totalLabelExp",
+          "Capseal": "totalCapseal",
+          "Lem AMDK": "totalLemAMDK",
+          "Packing Tape": "totalPackingTape",
+          "Karton": "totalKarton",
+          "Promo": "totalPromo",
+          "Reguler": "totalReguler",
+          "phillPromo": "totalphillPromo",
+          "phillReguler": "totalphillReguler"
+        };
+
+        var message = "*Hasil Opname Line " + line + " Shift " + shift + "*" + "\n\n";
+
+        // Loop melalui data variabel dan tambahkan ke pesan jika nilainya tidak nol
+        for (var key in data) {
+          var value = document.getElementById(data[key]).innerHTML;
+          if (value !== "0") {
+            message += key + " : " + value + (key === "Karton" ? " Lembar" : key === "Lem AMDK" ? " Kg" : " Pcs") + "\n";
+          }
+        }
+
+        // Tambahkan pesan kartonPromo, kartonReguler, kartonphillPromo, kartonphillReguler
+        var kartonPromo = document.getElementById("totalPromo").innerHTML;
+        var kartonReguler = document.getElementById("totalReguler").innerHTML;
+        var kartonphillPromo = document.getElementById("totalphillPromo").innerHTML;
+        var kartonphillReguler = document.getElementById("totalphillReguler").innerHTML;
+
+        if (kartonPromo !== "0" || kartonReguler !== "0" || kartonphillPromo !== "0" || kartonphillReguler !== "0") {
+          message += "====== Karton ======" + "\n";
+          if (kartonPromo !== "0") {
+            message += "Promo : " + kartonPromo + " Lembar" + "\n";
+          }
+          if (kartonReguler !== "0") {
+            message += "Reguler : " + kartonReguler + " Lembar" + "\n";
+          }
+          if (kartonphillPromo !== "0") {
+            message += "phillPromo : " + kartonphillPromo + " Lembar" + "\n";
+          }
+          if (kartonphillReguler !== "0") {
+            message += "phillReguler : " + kartonphillReguler + " Lembar" + "\n";
+          }
+        }
+
+        var url = "https://wa.me/+62" + no_wa + "?text=" + encodeURIComponent(message);
 
         window.open(url, "_blank").focus();
+
       }
     </script>
   </body>

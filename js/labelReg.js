@@ -25,7 +25,6 @@ $(function () {
       // alert(option)
     });
     $("#totalLabelReg").text(sum.toLocaleString("en-US"));
-    $("#namaLabelReg").text("Label " + jenisLabel);
   };
 
   $("#savelabelReg").on("click", function () {
